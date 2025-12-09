@@ -14,6 +14,7 @@ namespace Task_Manager
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddScoped<IServiceTask, ServiceTask>();
 
             var app = builder.Build();
 
@@ -23,7 +24,7 @@ namespace Task_Manager
                 app.MapOpenApi();
                 app.MapSwagger();
                 app.UseSwaggerUI();
-                app.MapScalarApiReference();
+                //app.MapScalarApiReference();
             }
 
             app.UseHttpsRedirection();
