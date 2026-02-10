@@ -1,6 +1,6 @@
 ﻿namespace Task_Manager.Services
 {
-    public class ServiceUser
+    public class ServiceUser: IServiceUser
     {
     }
 }

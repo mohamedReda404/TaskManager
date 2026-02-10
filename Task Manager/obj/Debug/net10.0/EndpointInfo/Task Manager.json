@@ -1,9 +1,16 @@
 {
-  "openapi": "3.0.4",
+  "openapi": "3.1.1",
   "info": {
-    "title": "Task Manager",
-    "version": "1.0"
+    "title": "Task Manager | v1",
+    "version": "1.0.0"
   },
-  "paths": { },
-  "components": { }
+  "servers": [
+    {
+      "url": "https://localhost:7005"
+    },
+    {
+      "url": "http://localhost:5222"
+    }
+  ],
+  "paths": { }
 }

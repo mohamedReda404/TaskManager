@@ -1,5 +1,8 @@
 
 
+using Microsoft.EntityFrameworkCore;
+
+
 namespace Task_Manager
 {
     public class Program
@@ -13,9 +16,9 @@ namespace Task_Manager
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
-            builder.Services.AddSwaggerGen();
-            builder.Services.AddScoped<IServiceTask, ServiceTask>();
-
+            builder.Services.ApplicationServices();
+            builder.Services.AddSwagger();
+            builder.Services.AddDBConfig(builder.Configuration);
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -24,7 +27,7 @@ namespace Task_Manager
                 app.MapOpenApi();
                 app.MapSwagger();
                 app.UseSwaggerUI();
-                //app.MapScalarApiReference();
+                app.MapScalarApiReference();
             }
 
             app.UseHttpsRedirection();

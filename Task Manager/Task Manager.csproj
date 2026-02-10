@@ -20,4 +20,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="10.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Mapping\" />
+    <Folder Include="Contracts\" />
+  </ItemGroup>
+
 </Project>

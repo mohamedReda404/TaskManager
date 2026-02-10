@@ -5,13 +5,10 @@ namespace Task_Manager.Models
     public class Users
     {
        
-        [Key]
-        public int UserId { get; set; }
-        [Required,MaxLength(100)]
+       
+        public int Id { get; set; }
         public string UserName { get; set; } = string.Empty;
-        [Required]
         public string UserEmail { get; set; }= string.Empty;
-        [Required]
         public string UserPassword { get; set; }=string.Empty;
 
 
