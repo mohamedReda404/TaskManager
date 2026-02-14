@@ -1,6 +1,8 @@
 
 
 using Microsoft.EntityFrameworkCore;
+using Task_Manager.Models;
+using Task_Manager.Persistence;
 
 
 namespace Task_Manager
@@ -18,6 +20,7 @@ namespace Task_Manager
             builder.Services.AddOpenApi();
             builder.Services.ApplicationServices();
             builder.Services.AddSwagger();
+            builder.Services.AddIdentityApiEndpoints<ApplicationUser>().AddEntityFrameworkStores<AppDbContext>();
             builder.Services.AddDBConfig(builder.Configuration);
             var app = builder.Build();
 
@@ -34,7 +37,7 @@ namespace Task_Manager
 
             app.UseAuthorization();
 
-
+            app.MapIdentityApi<ApplicationUser>();
             app.MapControllers();
 
             app.Run();

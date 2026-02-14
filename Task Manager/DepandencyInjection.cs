@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Runtime.CompilerServices;
+using Task_Manager.Models;
 using Task_Manager.Persistence;
 
 namespace Task_Manager
@@ -10,6 +12,7 @@ namespace Task_Manager
         {
             services.AddScoped<IServiceTask, ServiceTask>();
             services.AddScoped<IServiceUser, ServiceUser>();
+            
             return services;
         }
 

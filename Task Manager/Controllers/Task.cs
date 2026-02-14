@@ -6,6 +6,5 @@ namespace Task_Manager.Controllers
 
     public class Task : ControllerBase
     {
-        
     }
 }
